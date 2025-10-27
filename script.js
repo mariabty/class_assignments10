@@ -60,7 +60,7 @@ addBtn.addEventListener("click", () => {
 });
 
 // ===== POKEDEX (replaces Weather) =====
-const pokemonBtn = document.getElementById("getPokemon"); // button now named for PokÃ©mon
+const pokemonBtn = document.getElementById("getPokemon"); // button now named for Pokémon
 const pokemonInput = document.getElementById("pokemonInput");
 const pokemonInfo = document.getElementById("pokemonInfo");
 const pokemonMain = document.getElementById("pokemonMain");
@@ -71,7 +71,7 @@ function capitalize(s){ return s && s.length ? s.charAt(0).toUpperCase() + s.sli
 pokemonBtn.addEventListener("click", async () => {
   const query = pokemonInput.value.trim().toLowerCase();
   if (!query) {
-    alert("Please enter a PokÃ©mon name or id!");
+    alert("Please enter a Pokémon name or id!");
     return;
   }
 
@@ -83,7 +83,7 @@ pokemonBtn.addEventListener("click", async () => {
 
     if (!response.ok) {
       // PokeAPI returns JSON with detail for some errors; attempt to parse
-      let errMsg = 'PokÃ©mon not found';
+      let errMsg = 'Pokémon not found';
       try {
         const errData = await response.json();
         if (errData && errData.detail) errMsg = errData.detail;
@@ -119,9 +119,9 @@ pokemonBtn.addEventListener("click", async () => {
       <div>Base experience: ${data.base_experience}</div>
     `;
   } catch (error) {
-    console.error('Error fetching PokÃ©mon:', error);
+    console.error('Error fetching Pokémon:', error);
     pokemonInfo.style.display = "block";
-    pokemonMain.innerHTML = Error: ${error.message || 'PokÃ©mon not found'};
+    pokemonMain.innerHTML = Error: ${error.message || 'Pokémon not found'};
     pokemonDetails.innerHTML = "";
   }
 });
@@ -189,14 +189,14 @@ document.getElementById("equal").addEventListener("click", () => {
 const soundBtn = document.getElementById("soundToggle");
 soundBtn.addEventListener("click", () => {
   soundOn = !soundOn;
-  soundBtn.textContent = soundOn ? "ð Sound: On" : "ð Sound: Off";
+  soundBtn.textContent = soundOn ? "🔈 Sound: On" : "🔇 Sound: Off";
 });
 
 // ===== THEME TOGGLE =====
 const themeToggle = document.getElementById("themeToggle");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  themeToggle.textContent = document.body.classList.contains("dark") ? "âï¸ Light" : "ð Dark";
+  themeToggle.textContent = document.body.classList.contains("dark") ? "☀ Light" : "🌙 Dark";
 });
 
 // ===== CONTACT FORM =====
