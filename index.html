@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Basumatary | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-left">
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+    <div class="logo">Maria<span>Basumatary</span></div>
+    <div class="header-right">
+      <button id="themeToggle" class="theme-toggle">🌙 Dark</button>
+    </div>
+  </header>
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <a href="javascript:void(0)" class="close-btn" onClick="closeSidebar()">✕</a>
+    <a href="#home" onClick="closeSidebar()">Home</a>
+    <a href="#about" onClick="closeSidebar()">About</a>
+    <a href="#gallery" onClick="closeSidebar()">Gallery</a>
+    <a href="#filter" onClick="closeSidebar()">Movies</a>
+    <a href="#todo" onClick="closeSidebar()">To-Do</a>
+  <a href="#countdown" onClick="closeSidebar()">Countdown</a>
+  <a href="#pokedex" onClick="closeSidebar()">Pokédex</a>
+    <a href="#calculator" onClick="closeSidebar()">Calculator</a>
+    <a href="#contact" onClick="closeSidebar()">Contact</a>
+  </div>
+
+  <!-- HOME -->
+  <section id="home" class="hero fade-in"> 
+    <div class="hero-content">
+      <img src="emosagii.jpg" alt="Maria Basumatary" class="profile-pic" />
+      <h1>Hello! I’m <span>Maria Basumatary</span></h1>
+      <p>
+        A B.Tech student at <strong>Central Institute of Technology, Kokrajhar</strong>, pursuing my degree in <strong>Computer Science and Engineering</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about fade-in">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate and creative student who loves designing and developing beautiful, functional, and responsive web experiences.
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="gallery fade-in">
+    <h2>My Gallery</h2>
+    <div class="main-image">
+      <img id="displayed-img" src="emosagii.jpg" alt="Main Image" />
+    </div>
+    <div class="thumbnails">
+      <img src="emosagii.jpg" alt="Thumb 1" />
+      <img src="emosagii.jpg" alt="Thumb 2" />
+      <img src="emosagii.jpg" alt="Thumb 3" />
+      <img src="emosagii.jpg" alt="Thumb 4" />
+    </div>
+  </section>
+
+  <!-- MOVIES -->
+  <section id="filter" class="filter fade-in">
+    <h2>🎬 My Favorite Movies</h2>
+    <input type="text" id="newMovieInput" placeholder="Enter a new movie..." />
+    <button id="addMovieBtn">Add Movie</button>
+    <input type="text" id="searchInput" placeholder="Search movies..." />
+    <ul id="movieList"></ul>
+  </section>
+
+  <!-- TO-DO -->
+  <section id="todo" class="todo fade-in">
+    <h2>📝 My To-Do List</h2>
+    <div class="todo-container">
+      <input type="text" id="taskInput" placeholder="Enter a new task..." />
+      <button id="addBtn">Add Task</button>
+      <ul id="taskList"></ul>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section id="countdown" class="countdown fade-in">
+    <h2>⏳ Countdown Timer</h2>
+    <input type="text" id="occasionName" placeholder="Occasion Name" />
+    <input type="date" id="occasionDate" />
+    <input type="time" id="occasionTime" />
+    <button id="startCountdown">Start Countdown</button>
+    <div id="countdown-timer">No countdown set</div>
+  </section>
+
+  <!-- POKEDEX -->
+  <section id="pokedex" class="pokedex fade-in">
+    <h2>🔎 Pokédex</h2>
+    <div class="pokedex-container">
+      <input type="text" id="pokemonInput" placeholder="Enter Pokémon name or id..." />
+      <button id="getPokemon">Get Pokémon</button>
+      <div id="pokemonInfo" class="pokedex-info">
+        <div id="pokemonMain"></div>
+        <div id="pokemonDetails"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR -->
+  <section id="calculator" class="calculator fade-in">
+    <h2>🧮 Basic Calculator</h2>
+    <button id="soundToggle" class="sound-btn">🔈 Sound: On</button>
+    <div class="calc-container">
+      <div id="calcExpression">0</div>
+      <input type="text" id="calcDisplay" readonly placeholder="0" />
+      <div class="calc-buttons">
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn operator" data-value="/">÷</button>
+
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn operator" data-value="*">×</button>
+
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn operator" data-value="-">−</button>
+
+        <button class="btn" data-value="0">0</button>
+        <button class="btn" data-value=".">.</button>
+        <button class="btn clear" id="clear">C</button>
+        <button class="btn delete" id="delete">DEL</button>
+
+        <button class="btn operator" data-value="+">+</button>
+        <button class="btn equal" id="equal">=</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact fade-in">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Enter your name" />
+      <input type="email" id="email" placeholder="Enter your email" />
+      <input type="password" id="password" placeholder="Enter password" />
+      <input type="password" id="confirm" placeholder="Confirm password" />
+      <textarea id="message" placeholder="Your message..."></textarea>
+      <button type="submit">Send</button>
+      <p id="error-msg"></p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Connect with me:</p>
+    <div class="social-links">
+      <a href="https://github.com/mariabty" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/maria-basumatary-42b31a329" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/mxmariax3" target="_blank">Instagram</a>
+      <a href="mailto:mariabasumataryx3@gmail.com">Gmail</a>
+    </div>
+    <p class="copyright">© 2025 Maria Basumatary</p>
+  </footer>
+
+</body>
+</html>
