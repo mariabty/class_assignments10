@@ -1,0 +1,263 @@
+/* GENERAL */
+html { scroll-behavior: smooth; }
+body { font-family: 'Poppins', sans-serif; margin:0; padding:0; background:#f9f6f4; color:#333; transition:0.5s; }
+h2 { text-align:center; margin-top:30px; font-size:2rem; }
+
+/* HEADER */
+header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f3c6d1;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo { 
+    font-weight: 700;
+    font-size: 1.6rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.logo span { color:#e91e63; }
+.nav-links a { margin:0 10px; text-decoration:none; color:#3d3d3d; font-weight:500; transition:0.3s; }
+.nav-links a:hover { color:#e91e63; }
+.hamburger { 
+    display: block;  /* Changed from none to block to make it always visible */
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-right: 15px;
+    color: #3d3d3d;
+    transition: color 0.3s;
+    padding: 5px;
+}
+.hamburger:hover {
+    color: #e91e63;
+}
+
+/* THEME TOGGLE */
+.theme-toggle { 
+    padding: 8px 15px;
+    background: #ff85a2;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    transition: 0.3s;
+}
+.theme-toggle:hover { background:#e91e63; }
+
+/* Adjust theme toggle position on mobile */
+@media screen and (max-width: 768px) {
+    .theme-toggle {
+        position: fixed;
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        font-size: 1.2rem;
+    }
+}
+
+/* HERO */
+.hero { text-align:center; padding:60px 20px; }
+.hero-content { max-width:600px; margin:auto; }
+.profile-pic { width:150px; border-radius:50%; margin-bottom:20px; border:3px solid #e91e63; }
+.hero h1 span { color:#e91e63; }
+
+/* ABOUT */
+.about { padding:40px 20px; text-align:center; max-width:700px; margin:auto; }
+
+/* GALLERY */
+.gallery { text-align:center; padding:40px 20px; }
+.main-image img { width:250px; border-radius:10px; border:3px solid #e91e63; }
+.thumbnails { margin-top:15px; }
+.thumbnails img { width:60px; margin:5px; border-radius:10px; cursor:pointer; transition:0.3s; }
+.thumbnails img:hover { transform:scale(1.2); }
+
+/* MOVIES */
+.filter { padding:40px 20px; text-align:center; }
+.filter input { padding:10px; margin:10px; width:220px; }
+#movieList { list-style:none; padding:0; }
+#movieList li { background:#ffe6eb; margin:5px auto; padding:10px 15px; width:280px; border-radius:10px; font-weight:500; transition:0.3s; cursor:pointer; }
+#movieList li:hover { background:#f3c6d1; }
+
+/* TO-DO */
+.todo { text-align:center; padding:40px 20px; }
+.todo-container input { padding:10px; margin-right:10px; width:200px; }
+.todo-container button { padding:10px 15px; background:#ff85a2; border:none; border-radius:8px; color:white; cursor:pointer; }
+.todo-container button:hover { background:#e91e63; }
+#taskList { list-style:none; padding:0; }
+#taskList li { background:#ffe6eb; margin:8px auto; padding:8px 12px; width:260px; border-radius:8px; cursor:pointer; transition:0.3s; }
+#taskList li.done { text-decoration:line-through; background:#d4edda; }
+
+/* COUNTDOWN */
+.countdown { text-align:center; padding:40px 20px; }
+#countdown-timer { margin-top:20px; font-size:1.4rem; font-weight:bold; color:#e91e63; }
+
+/* POKEDEX */
+.pokedex { text-align: center; padding: 40px 20px; }
+.pokedex-container { 
+    max-width: 400px; 
+    margin: auto; 
+    background: #fff1f5; 
+    padding: 20px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+}
+.pokedex-container input { 
+    padding: 10px; 
+    width: 200px; 
+    margin-right: 10px; 
+    border-radius: 8px; 
+    border: 1px solid #ccc; 
+}
+.pokedex-container button { 
+    padding: 10px 20px; 
+    background: #ff85a2; 
+    border: none; 
+    border-radius: 8px; 
+    color: white; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+.pokedex-container button:hover { background: #e91e63; }
+.pokedex-info { 
+    margin-top: 20px; 
+    padding: 15px; 
+    border-radius: 10px; 
+    display: none; 
+}
+#pokemonMain { 
+    font-size: 1.4rem; 
+    margin-bottom: 15px; 
+    font-weight: bold; 
+}
+#pokemonDetails { 
+    font-size: 1.1rem; 
+    line-height: 1.6; 
+}
+body.dark .pokedex-container { background: #333; }
+
+/* CALCULATOR */
+.calculator { text-align:center; padding:40px 20px; }
+.calc-container { display:inline-block; background:#fff1f5; padding:20px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.2); }
+#calcExpression { text-align:right; font-size:0.9rem; color:gray; min-height:20px; margin-bottom:5px; }
+#calcDisplay { width:220px; padding:10px; margin-bottom:10px; font-size:1.2rem; text-align:right; border-radius:8px; border:1px solid #ccc; }
+.calc-buttons { display:grid; grid-template-columns:repeat(4,60px); gap:10px; justify-content:center; }
+.btn { padding:15px; border:none; border-radius:8px; background:#ff85a2; color:white; font-size:1.1rem; cursor:pointer; transition:0.3s; }
+.btn:hover { background:#e91e63; transform:scale(1.1); }
+.equal { grid-column:span 4; background:#28a745; }
+.equal:hover { background:#218838; }
+.clear { background:#ff4444; }
+.clear:hover { background:#c0392b; }
+.delete { background:#ff9900; }
+.delete:hover { background:#e68a00; }
+.sound-btn { margin-bottom:15px; background:#6c63ff; color:white; border:none; border-radius:20px; padding:8px 20px; cursor:pointer; font-weight:600; }
+.sound-btn:hover { background:#5548d9; }
+
+/* CONTACT */
+.contact { padding:40px 20px; text-align:center; }
+.contact form { max-width:400px; margin:auto; display:flex; flex-direction:column; }
+.contact input, .contact textarea { padding:10px; margin:8px 0; border-radius:8px; border:1px solid #ccc; }
+.contact button { background:#ff85a2; color:white; border:none; padding:12px; border-radius:8px; cursor:pointer; }
+.contact button:hover { background:#e91e63; }
+#error-msg { color:red; font-weight:bold; }
+
+/* FOOTER */
+footer { background:#f3c6d1; text-align:center; padding:20px; }
+.social-links a { margin:0 10px; text-decoration:none; color:#3d3d3d; font-weight:600; }
+.social-links a:hover { color:#e91e63; }
+
+/* DARK MODE */
+body.dark { background:#1f1f1f; color:#f9f9f9; }
+body.dark header, body.dark footer { background:#2c2c2c; color:white; }
+body.dark .calc-container { background:#333; }
+body.dark .btn { background:#6c63ff; }
+body.dark .btn:hover { background:#5548d9; }
+body.dark #countdown-timer { color:#6c63ff; }
+
+/* SIDEBAR */
+#sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1002;
+    top: 0;
+    left: 0;
+    background-color: #f3c6d1;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    display: none;
+}
+
+#sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #3d3d3d;
+    display: block;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+#sidebar a:hover {
+    color: #e91e63;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#sidebar a:first-child {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    header {
+        padding: 15px 20px;
+    }
+    .logo {
+        font-size: 1.4rem;
+    }
+    .theme-toggle {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Dark mode support for sidebar */
+body.dark #sidebar {
+    background-color: #2c2c2c;
+}
+body.dark #sidebar a {
+    color: #f9f9f9;
+}
+
