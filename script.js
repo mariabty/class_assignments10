@@ -76,7 +76,7 @@ pokemonBtn.addEventListener("click", async () => {
   }
 
   try {
-    const url = https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(query)};
+    const url = `https://pokeapi.co/api/v2/pokemon/${encodeURIComponent(query)}`;
     console.log('Fetching PokeAPI URL:', url);
     const response = await fetch(url);
     console.log('PokeAPI response status:', response.status);
@@ -121,7 +121,7 @@ pokemonBtn.addEventListener("click", async () => {
   } catch (error) {
     console.error('Error fetching Pokémon:', error);
     pokemonInfo.style.display = "block";
-    pokemonMain.innerHTML = Error: ${error.message || 'Pokémon not found'};
+    pokemonMain.innerHTML = `Error: ${error.message || 'Pokémon not found'}`;
     pokemonDetails.innerHTML = "";
   }
 });
@@ -135,18 +135,18 @@ startCountdown.addEventListener("click", () => {
   const date = document.getElementById("occasionDate").value;
   const time = document.getElementById("occasionTime").value;
   if(!date || !time) { timerDisplay.textContent = "Please enter date and time!"; return; }
-  const target = new Date(${date}T${time}).getTime();
+  const target = new Date(`${date}T${time}`).getTime();
   const occ = name || "Your Event";
   clearInterval(window.countdownInterval);
   window.countdownInterval = setInterval(() => {
     const now = new Date().getTime();
     const diff = target - now;
-    if(diff < 0) { timerDisplay.textContent = ${occ} has arrived!; clearInterval(window.countdownInterval); return; }
+    if(diff < 0) { timerDisplay.textContent = `${occ} has arrived!`; clearInterval(window.countdownInterval); return; }
     const d = Math.floor(diff / (1000*60*60*24));
     const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
     const m = Math.floor((diff % (1000*60*60)) / (1000*60));
     const s = Math.floor((diff % (1000*60)) / 1000);
-    timerDisplay.textContent = ${occ}: ${d}d ${h}h ${m}m ${s}s;
+    timerDisplay.textContent = `${occ}: ${d}d ${h}h ${m}m ${s}s`;
   }, 1000);
 });
 
@@ -196,7 +196,7 @@ soundBtn.addEventListener("click", () => {
 const themeToggle = document.getElementById("themeToggle");
 themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  themeToggle.textContent = document.body.classList.contains("dark") ? "☀ Light" : "🌙 Dark";
+  themeToggle.textContent = document.body.classList.contains("dark") ? "☀️ Light" : "🌙 Dark";
 });
 
 // ===== CONTACT FORM =====
